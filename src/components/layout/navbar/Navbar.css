@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  width: 100%;
+  background-color: rgb(187, 114, 18);
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h3 {
+  color: rgb(134, 24, 24);
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.cart {
+  display: flex;
+  border: 1px black;
+  margin: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+
+  color: rgb(255, 255, 255);
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+a {
+  all: unset;
+  text-decoration: none;
+  color: inherit;
+}

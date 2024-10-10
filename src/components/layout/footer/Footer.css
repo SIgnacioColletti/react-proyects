@@ -1,0 +1,28 @@
+.footer {
+  background-color: #f2f2f2;
+  padding: 50px 0;
+  height: 100px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 1;
+}
+
+.social-icons {
+  list-style: none;
+  display: flex;
+}
+
+.social-icons li {
+  margin-right: 10px;
+}
