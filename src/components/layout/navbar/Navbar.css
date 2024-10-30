@@ -3,8 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-nav {
+.navBar {
   display: flex;
   flex-direction: row;
   height: 50%;
@@ -15,8 +14,9 @@ nav {
   justify-content: space-between;
 }
 
-h3 {
-  color: rgb(134, 24, 24);
+.logo {
+  color: rgb(255, 251, 251);
+  cursor: pointer;
 }
 
 ul {
@@ -34,7 +34,7 @@ ul {
   cursor: pointer;
 }
 
-button {
+.btn-products {
   background-color: transparent;
   border: none;
 

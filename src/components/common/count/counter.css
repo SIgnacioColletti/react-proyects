@@ -1,0 +1,31 @@
+.count {
+  margin: 15px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+}
+
+.btn-count {
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  width: 25px;
+}
+
+.text-count {
+  margin: 0 10px;
+}
+.btn-count-cart {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 24px;
+  text-decoration: underline;
+}

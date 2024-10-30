@@ -1,0 +1,8 @@
+.text-cart {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  font-size: 80px;
+  text-decoration: underline;
+}
