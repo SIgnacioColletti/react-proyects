@@ -1,36 +1,119 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import { products } from "../../Products";
 import { useParams } from "react-router-dom";
+import { Skeleton } from "@mui/material";
+import { db } from "../../../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export const ItemListContainer = () => {
   const { name } = useParams();
-
   const [items, setItems] = useState([]);
-  const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    const getProducts = async () => {
-      setCargando(true);
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+    const productsCollection = collection(db, "products");
 
-      const filteredProducts = name
-        ? products.filter((product) => product.category === name)
-        : products;
-      setItems(filteredProducts);
-      setCargando(false);
-    };
+    let docsRef = productsCollection;
+    if (name) {
+      docsRef = query(productsCollection, where("category", "==", name));
+    }
+    getDocs(docsRef).then((res) => {
+      let arrayEntendible = res.docs.map((doc) => {
+        return { ...doc.data(), id: doc.id };
+      });
 
-    getProducts();
+      setItems(arrayEntendible);
+    });
   }, [name]);
+  if (items.length === 0) {
+    return (
+      <div className="skeleton-container">
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+        <div>
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+          <Skeleton variant="rectangular" width={350} height={100} />
+        </div>
+      </div>
+    );
+  }
 
-  return (
-    <div>
-      {cargando ? (
-        <p className="load">Cargando...</p>
-      ) : (
-        <ItemList items={items} />
-      )}
-    </div>
-  );
+  return <ItemList items={items} />;
 };

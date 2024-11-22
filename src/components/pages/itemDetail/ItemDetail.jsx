@@ -1,7 +1,7 @@
 import Counter from "../../common/count/Counter";
 import "./itemlistd.css";
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, onAdd, totalInCart }) => {
   return (
     <div className="product">
       <h2>{item.title}</h2>
@@ -9,11 +9,7 @@ const ItemDetail = ({ item }) => {
       <h2>{item.description}</h2>
       <p>${item.price}</p>
       <p> nos quedan: {item.stock} unidades de este producto</p>
-      <Counter
-        initial={1}
-        stock={item.stock}
-        onAdd={(quantity) => console.log("CANTIDAD AGREGADA:", quantity)}
-      />
+      <Counter stock={item.stock} onAdd={onAdd} totalInCart={totalInCart} />
     </div>
   );
 };

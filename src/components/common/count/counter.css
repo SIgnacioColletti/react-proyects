@@ -26,6 +26,10 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 14px;
   text-decoration: underline;
+}
+.div-btn {
+  display: flex;
+  gap: 15px;
 }

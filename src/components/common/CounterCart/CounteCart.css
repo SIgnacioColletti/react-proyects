@@ -1,0 +1,16 @@
+.counter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px;
+}
+
+.counter-buttons {
+  cursor: pointer;
+  font-size: 40px;
+}
+
+.text-count {
+  margin: 0 10px; /* Ajusta el margen para separar los botones del contador */
+}

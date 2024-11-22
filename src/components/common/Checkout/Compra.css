@@ -1,0 +1,13 @@
+.compra-contenedor {
+  text-align: center; /* Centra el contenido horizontalmente */
+  background-color: #f2f2f2; /* Color de fondo gris claro */
+  border: 1px solid black; /* Borde negro de 1px */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espacio interno */
+  margin: 0 auto; /* Centra el contenedor verticalmente */
+  max-width: 600px; /* Establece un ancho máximo para evitar que se extienda demasiado */
+}
+
+.compra-titulo {
+  margin-bottom: 10px; /* Espacio entre el título y el ID */
+}

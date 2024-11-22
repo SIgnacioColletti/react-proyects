@@ -1,6 +1,6 @@
 export const products = [
   {
-    id: "1",
+    // id: "1",
     title: "Jean Clasico",
     price: 34500,
     stock: 5,
@@ -10,7 +10,7 @@ export const products = [
     category: "pantalones",
   },
   {
-    id: "2",
+    // id: "2",
     title: "Jean Cargo gris oscuro ",
     price: 53400,
     stock: 5,
@@ -20,7 +20,7 @@ export const products = [
     category: "pantalones",
   },
   {
-    id: "3",
+    // id: "3",
     title: "Cargo Negro",
     price: 34500,
     stock: 5,
@@ -30,7 +30,7 @@ export const products = [
     category: "pantalones",
   },
   {
-    id: "4",
+    // id: "4",
     title: "jogging negro",
     price: 34500,
     stock: 5,
@@ -40,7 +40,7 @@ export const products = [
     category: "pantalones",
   },
   {
-    id: "5",
+    // id: "5",
     title: "Remera negra clasic",
     price: 34500,
     stock: 5,
@@ -50,7 +50,7 @@ export const products = [
     category: "remeras",
   },
   {
-    id: "6",
+    // id: "6",
     title: "Remera Company",
     price: 25500,
     stock: 5,
@@ -70,7 +70,7 @@ export const products = [
     category: "remeras",
   },
   {
-    id: "8",
+    //   id: "8",
     title: "Remera blanca clasic",
     price: 34500,
     stock: 5,
@@ -80,7 +80,7 @@ export const products = [
     category: "remeras",
   },
   {
-    id: "9",
+    // id: "9",
     title: "Buzo azul",
     price: 34500,
     stock: 5,
@@ -90,7 +90,7 @@ export const products = [
     category: "buzos",
   },
   {
-    id: "10",
+    // id: "10",
     title: "buzo blanco",
     price: 34500,
     stock: 5,
@@ -100,7 +100,7 @@ export const products = [
     category: "buzos",
   },
   {
-    id: "11",
+    // id: "11",
     title: "buzo negro",
     price: 34500,
     stock: 5,
@@ -110,7 +110,7 @@ export const products = [
     category: "buzos",
   },
   {
-    id: "12",
+    // id: "12",
     title: "buzo byN",
     price: 34500,
     stock: 5,

@@ -1,19 +1,18 @@
 import { useState } from "react";
 import "./counter.css";
+import { Link } from "react-router-dom";
 
-const Counter = ({ stock, initial, onAdd }) => {
-  const [quantity, setQuantity] = useState(initial);
+const Counter = ({ stock, onAdd, totalInCart }) => {
+  const [contador, setContador] = useState(1);
 
   const suma = () => {
-    if (quantity < stock) {
-      setQuantity(quantity + 1);
-    }
+    stock - totalInCart > contador
+      ? setContador(contador + 1)
+      : alert("stock maximo");
   };
 
   const resta = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
+    contador > 1 && setContador(contador - 1);
   };
   return (
     <div className="count">
@@ -21,18 +20,21 @@ const Counter = ({ stock, initial, onAdd }) => {
         <button onClick={resta} className="btn-count">
           -
         </button>
-        <h2 className="text-count"> {quantity}</h2>
+        <h2 className="text-count">{contador} </h2>
         <button onClick={suma} className="btn-count">
           +
         </button>
       </div>
-      <button
-        className="btn-count-cart"
-        onClick={() => onAdd(quantity)}
-        disabled={!stock}
-      >
-        agregar al carrito
-      </button>
+      <div className="div-btn">
+        <Link to="/">
+          <button className="btn-count-cart">
+            volver a lista de productos
+          </button>
+        </Link>
+        <button className="btn-count-cart" onClick={() => onAdd(contador)}>
+          agregar al carrito
+        </button>
+      </div>
     </div>
   );
 };

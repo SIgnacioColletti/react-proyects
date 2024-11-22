@@ -1,0 +1,197 @@
+/* .form-container {
+  background: linear-gradient(150deg, rgb(187, 114, 18), rgb(253, 253, 253));
+  height: 100vh;
+}
+
+.formulario {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+}
+.login {
+  text-align: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid rgb(192, 192, 192);
+}
+.form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.username {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+
+.username input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.username label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.username span::before {
+  content: ´´;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgb(187, 114, 18);
+  transition: 0.5s;
+}
+
+.username input::focus ~ label,
+.username input::focus ~ label {
+  top: -5px;
+  color: rgb(187, 114, 18);
+}
+
+.username input::focus ~ span::before,
+.username input::focus ~ span::before {
+  width: 100%;
+} */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f7f7; /* Fondo gris suave */
+  padding: 20px;
+  font-family: "Arial", sans-serif; /* Fuente moderna */
+}
+
+/* Estilo del contenedor del formulario */
+.formulario {
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* Animación al pasar el ratón */
+}
+
+/* Animación de elevación al pasar el mouse */
+.formulario:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilo del título de la sección */
+.formulario h1.login {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Estilos para las secciones de los campos del formulario */
+.username {
+  margin-bottom: 20px;
+}
+
+/* Estilo de las etiquetas dentro del formulario */
+.formulario label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #555;
+  text-align: left;
+}
+
+/* Estilo de los campos de entrada */
+.formulario input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo cuando el campo de entrada tiene el foco */
+.formulario input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+  outline: none;
+}
+
+/* Estilo de los botones */
+.formulario button {
+  width: 48%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de comprar */
+.formulario button:first-of-type {
+  background-color: #4caf50;
+  color: white;
+}
+
+.formulario button:first-of-type:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+/* Botón de cancelar */
+.formulario button:last-of-type {
+  background-color: #f44336;
+  color: white;
+}
+
+.formulario button:last-of-type:hover {
+  background-color: #e53935;
+  transform: translateY(-2px);
+}
+
+/* Diseño responsivo para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .formulario {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .formulario h1.login {
+    font-size: 1.6rem;
+  }
+
+  .formulario input {
+    padding: 10px;
+  }
+
+  .formulario button {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .formulario button:first-of-type {
+    margin-bottom: 10px;
+  }
+}
